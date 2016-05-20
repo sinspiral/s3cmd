@@ -20,7 +20,7 @@ BuildArch:      noarch
 %if %{!?fedora:16}%{?fedora} < 16 || %{!?rhel:7}%{?rhel} < 7
 BuildRequires:  python-devel
 %else
-BuildRequires:  python2-devel
+BuildRequires:  python2.7-devel
 %endif
 %if %{!?fedora:8}%{?fedora} < 8 || %{!?rhel:6}%{?rhel} < 6
 # This is in standard library since 2.5

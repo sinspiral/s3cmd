@@ -1,12 +1,12 @@
 SHELL  := /bin/bash
-VERSION := $(shell /usr/bin/env python2 -c 'from S3 import PkgInfo;print PkgInfo.version')
+VERSION := $(shell /usr/bin/env python2.7 -c 'from S3 import PkgInfo;print PkgInfo.version')
 SPEC   := s3cmd.spec
 COMMIT := $(shell git rev-parse HEAD)
 SHORTCOMMIT := $(shell git rev-parse --short=8 HEAD)
 TARBALL = s3cmd-$(VERSION)-$(SHORTCOMMIT).tar.gz
 
 release:
-	python2 setup.py register sdist upload --sign
+	python2.7 setup.py register sdist upload --sign
 
 clean:
 	-rm -rf s3cmd-*.tar.gz *.rpm *~ $(SPEC)
